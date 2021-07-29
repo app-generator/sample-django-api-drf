@@ -4,6 +4,7 @@ from api.authentication.viewsets import (
     ActiveSessionViewSet,
     LogoutViewSet,
 )
+from api.transaction.viewsets import (TransactionViewSetCreate, TransactionViewSetDelete, TransactionViewSetList, TransactionViewSetRetrieve, TransactionViewSetUpdate)
 from rest_framework import routers
 from api.user.viewsets import UserViewSet
 
@@ -19,6 +20,7 @@ router.register(r"checkSession", ActiveSessionViewSet, basename="check-session")
 
 router.register(r"logout", LogoutViewSet, basename="logout")
 
+router.register()
 urlpatterns = [
     *router.urls,
 ]
