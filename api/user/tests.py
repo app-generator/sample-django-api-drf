@@ -4,8 +4,8 @@ from rest_framework import status
 
 
 class UserViewSetTest(APITestCase):
-    base_edit_url = reverse("api:user-edit-list")
-    base_url_login = reverse("api:login-list")
+    base_edit_url = reverse("api-users:user-edit-list")
+    base_url_login = reverse("api-users:login-list")
 
     data_login = {"password": "12345678", "email": "teast@admin.com"}
 

@@ -4,10 +4,10 @@ from rest_framework import status
 
 
 class AuthenticationTest(APITestCase):
-    base_url_register = reverse("api:register-list")
-    base_url_login = reverse("api:login-list")
-    base_url_logout = reverse("api:logout-list")
-    base_url_check_session = reverse("api:check-session-list")
+    base_url_register = reverse("api-users:register-list")
+    base_url_login = reverse("api-users:login-list")
+    base_url_logout = reverse("api-users:logout-list")
+    base_url_check_session = reverse("api-users:check-session-list")
 
     data_register = {"username": "test", "password": "pass", "email": "test@appseed.us"}
 
