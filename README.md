@@ -1,7 +1,7 @@
 
 # [Django API Server Sample](https://docs.appseed.us/samples/django/api-server-sample)
 
-Simple starter built with Python / Django Rest / SQLite3 and JWT Auth. The authentication flow is based on **json web tokens**. Forked from [Django API Server](https://github.com/app-generator/api-server-django). For complete documentation, please access: [Django API Server Sample](https://docs.appseed.us/samples/django/api-server-sample).
+Simple starter built with Python / Django Rest / SQLite3 and JWT Auth. The authentication flow is based on **json web tokens**. Forked from [Django API Server](https://github.com/app-generator/api-server-django). For more information please access the project [documentation](https://docs.appseed.us/samples/django/api-server-sample).
 
 <br />
 
