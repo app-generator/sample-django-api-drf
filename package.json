@@ -1,14 +1,14 @@
 {
-    "name": "api-server-django",
+    "name": "api-server-django-sample",
     "version": "1.0.0",
     "description": "Open-source API Server",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/app-generator/api-server-django"
+        "url": "https://github.com/app-generator/api-server-django-sample"
     },
     "bugs": {
-        "url": "https://github.com/app-generator/api-server-django/issues",
+        "url": "https://github.com/app-generator/api-server-django-sample/issues",
         "email": "support@appseed.us"
     },
     "author": "AppSeed App Generator <support@appseed.us> (https://appseed.us)",
