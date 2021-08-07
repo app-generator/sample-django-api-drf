@@ -36,6 +36,41 @@ class TransactionViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         raise MethodNotAllowed('GET')
 
+    @action(methods=['get'], detail=False, url_path='get')
+    def get_transactions(self, request, *args, **kwargs):
+
+        transactions = self.get_queryset()
+
+        page = self.paginate_queryset(transactions)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True, context=self.get_serializer_context())
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(transactions, many=True, context=self.get_serializer_context())
+        return Response({
+            "success": True,
+            "transactions": serializer.data
+        }, status=status.HTTP_200_OK)
+
+    @action(methods=['get'], detail=False, url_path=r'get/(?P<transaction_id>\w+)')
+    def get_transaction(self, request, transaction_id=None, *args, **kwargs):
+
+        if transaction_id is None:
+            raise ValidationError(self.missing_id_message)
+
+        try:
+            obj = Transaction.objects.get(pk=transaction_id)
+        except ObjectDoesNotExist:
+            raise NotFound(self.not_found_message)
+
+        serializer = self.get_serializer(obj)
+
+        return Response({
+            "success": True,
+            "transaction": serializer.data
+        }, status=status.HTTP_200_OK)
+
     @action(methods=['post'], detail=False, url_path='create')
     def create_transaction(self, request, *args, **kwargs):
         data = request.data
@@ -49,7 +84,7 @@ class TransactionViewSet(viewsets.ModelViewSet):
         }, status.HTTP_201_CREATED)
 
     @action(methods=['post'], detail=False, url_path=r'edit/(?P<transaction_id>\w+)')
-    def edit(self, request, transaction_id=None, *args, **kwargs):
+    def edit_transaction(self, request, transaction_id=None, *args, **kwargs):
 
         if transaction_id is None:
             raise ValidationError(self.missing_id_message)
@@ -87,37 +122,4 @@ class TransactionViewSet(viewsets.ModelViewSet):
             "success": True
         }, status.HTTP_200_OK)
 
-    @action(methods=['get'], detail=False, url_path='get')
-    def get_transactions(self, request, *args, **kwargs):
 
-        transactions = self.get_queryset()
-
-        page = self.paginate_queryset(transactions)
-
-        if page is not None:
-            serializer = self.get_serializer(page, many=True, context=self.get_serializer_context())
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(transactions, many=True, context=self.get_serializer_context())
-        return Response({
-            "success": True,
-            "transactions": serializer.data
-        }, status=status.HTTP_200_OK)
-
-    @action(methods=['get'], detail=False, url_path=r'get/(?P<transaction_id>\w+)')
-    def get(self, request, transaction_id=None, *args, **kwargs):
-
-        if transaction_id is None:
-            raise ValidationError(self.missing_id_message)
-
-        try:
-            obj = Transaction.objects.get(pk=transaction_id)
-        except ObjectDoesNotExist:
-            raise NotFound(self.not_found_message)
-
-        serializer = self.get_serializer(obj)
-
-        return Response({
-            "success": True,
-            "transaction": serializer.data
-        }, status=status.HTTP_200_OK)
