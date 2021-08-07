@@ -53,8 +53,8 @@ Simple starter built with Python / Django Rest / Sqlite3 and JWT Auth. The authe
 **Clone the sources**
 
 ```bash
-$ git clone https://github.com/app-generator/api-server-django.git
-$ cd api-server-django
+$ git clone https://github.com/app-generator/api-server-django-sample.git
+$ cd api-server-django-sample
 ```
 
 **Create a virtual environment**
@@ -105,7 +105,7 @@ Visit `http://localhost:5000` in your browser. The API server will be running.
 
 ## API
 
-For a fast set up, use this POSTMAN file: [api_sample](https://github.com/app-generator/api-server-Django/blob/master/media/api.postman_collection.json)
+For a fast set up, use this POSTMAN file: [api_sample](https://github.com/app-generator/api-unified-definition/blob/main/api.postman_collection.json)
 
 > **Register** - `api/users/signup`
 
