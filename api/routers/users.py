@@ -4,7 +4,6 @@ from api.authentication.viewsets import (
     ActiveSessionViewSet,
     LogoutViewSet,
 )
-from api.transaction.viewsets import (TransactionViewSetCreate, TransactionViewSetDelete, TransactionViewSetList, TransactionViewSetRetrieve, TransactionViewSetUpdate)
 from rest_framework import routers
 from api.user.viewsets import UserViewSet
 
