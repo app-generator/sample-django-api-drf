@@ -1,5 +1,5 @@
 
-# Django API Server
+# [Django API Server Sample](https://docs.appseed.us/samples/django/api-server-sample)
 
 Simple starter built with Python / Django Rest / Sqlite3 and JWT Auth. The authentication flow is based on [json web tokens](https://jwt.io).
 
@@ -11,7 +11,12 @@ Simple starter built with Python / Django Rest / Sqlite3 and JWT Auth. The authe
 - Django / Django REST / Sqlite3 - a simple, easy to use backend
 - Authentication with JWT (JWT login, JWT logout)
 - Testing, Docker
-- [API Interface Descriptor](https://github.com/app-generator/api-server-nodejs/blob/master/media/api.postman_collection.json): POSTMAN Collection
+- Forked and extended from [Django API Server](https://github.com/app-generator/api-server-django) with more features
+    - `api/transactions/create` -&gt; create transaction
+    - `api/transactions/edit/id`-&gt; edit transaction
+    - `api/transactions/delete/id` -&gt; delete transaction
+    - `api/transactions/get/id` -&gt; get specific transaction 
+    - `api/transactions/get` -&gt; get all transactions     
 
 <br />
 
@@ -146,4 +151,4 @@ authorization: JWT_TOKEN (returned by Login request)
 <br />
 
 ---
-Django API Server - provided by AppSeed [App Generator](https://appseed.us)
+[Django API Server Sample](https://docs.appseed.us/samples/django/api-server-sample) - Provided by AppSeed [App Generator](https://appseed.us)
