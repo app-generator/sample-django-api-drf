@@ -8,5 +8,5 @@ class TransactionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Transaction
-        fields = ["id", "product", "price", "qty", "discount", "info"]
-        read_only_field = ["id", "created"]
+        fields = ["id", "product", "price", "qty", "discount", "info", "created_at"]
+        read_only_field = ["id", "created_at"]
